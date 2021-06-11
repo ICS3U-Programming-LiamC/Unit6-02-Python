@@ -16,6 +16,25 @@ def greet():
 determine the largest, and smallest of those numbers")
 
 
+# finds the smallest number
+def smallest(array):
+    min_num = 100
+    for each in array:
+        if (each < min_num):
+            min_num = each
+    return min_num
+
+
+# finds the biggest number
+def largest(array):
+    max_num = 0
+    for each in array:
+        if (each > max_num):
+            max_num = each
+
+    return max_num
+
+
 # main function
 def main():
     # initialize the list
@@ -24,21 +43,14 @@ def main():
     for each in range(0, const.NUM_NUMS):
         array_of_nums.append(random.randint(const.MIN, const.MAX))
 
-    # set total to zero and then add each element in the list
-    # to the total
-    total = 0
-    max_num = 0
-    min_num = 100
-    for each in array_of_nums:
-        if (each > max_num):
-            max_num = each
-        if (each < min_num):
-            min_num = each
+    # calls the functions and saves the results
+    min_num = smallest(array_of_nums)
+    max_num = largest(array_of_nums)
 
     # print all these things back to the user
     print(array_of_nums)
     print("The largest of these numbers is {}".format(max_num))
-    print("The samllest of these numbers is {}".format(min_num))
+    print("The smallest of these numbers is {}".format(min_num))
 
 
 # gets the program started
